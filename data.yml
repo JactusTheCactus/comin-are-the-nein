@@ -21,6 +21,7 @@ rebel:
     Didn't know she was leaving for brighter skies
 healer:
   <<: *hero
+  weapon: Necromancy
   details: |
     Healer raised in the heart of a graveyard
     Healer born in the grove
