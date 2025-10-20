@@ -1,4 +1,4 @@
-key,name,sex,origin.species,origin.nationality,weapon
+key,name,sex,species,nationality,weapon
 Sailor,"","","","",""
 Rebel,"","","","",""
 Healer,"","","","",""
