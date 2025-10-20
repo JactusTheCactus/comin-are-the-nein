@@ -3,9 +3,9 @@ _hero: &hero
     - !!str
     - !!str
   sex: !!str
-  species: !!seq
-    - !!str
-    - !!str
+  species: !!map
+    primary: !!str
+    secondary: !!str
   nationality: !!str
   weapon: !!str
   details: !!seq []
@@ -56,5 +56,5 @@ hound:
     - Verran
   sex: F
   species:
-    - Hellhound
-    - Changeling
+    primary: Hellhound
+    secondary: Changeling
