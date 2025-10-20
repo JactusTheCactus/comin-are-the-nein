@@ -1,4 +1,4 @@
-moniker,name,sex,species,subspecies,nationality,weapon
+moniker,name,sex,species.primary,species.secondary,nationality,weapon
 Sailor,,,,,,
 Rebel,,,,,,
 Healer,,,,,,
