@@ -13,10 +13,7 @@ function jsonToCsv(obj) {
 	function flatten(obj, parentKey = '', res = {}) {
 		for (let key in obj) {
 			const propName = parentKey
-				? [
-					parentKey,
-					key
-				].join(".")
+				? `${parentKey}[${key}]`
 				: key
 			const val = obj[key]
 			if (Array.isArray(val)) {
