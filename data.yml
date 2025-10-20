@@ -32,6 +32,7 @@ sapphire:
     Going out to discover what adventure holds
 sinner:
   <<: *hero
+  sex: M
   species:
     primary: Human
     secondary: Tiefling
