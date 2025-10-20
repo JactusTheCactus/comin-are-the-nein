@@ -50,6 +50,8 @@ king:
     Now returns as a menace to his friends bereft
 hound:
   <<: *hero
-  name: [Canis]
+  name:
+    - Canis
+    - Verran
   sex: F
   origin.species: Changeling (Hellhound)
