@@ -10,7 +10,7 @@ function capitalize(str, strict = false) {
 	].join("")
 }
 function jsonToCsv(obj) {
-	const colBreak = ",\t"
+	const colBreak = ","
 	function flatten(obj, parentKey = '', res = {}) {
 		for (let key in obj) {
 			const propName = parentKey
