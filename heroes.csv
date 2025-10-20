@@ -1,4 +1,4 @@
-key,name,sex,species.primary,species.secondary,nationality,weapon
+key,name,sex,species,subspecies,nationality,weapon
 Sailor,,,,,,
 Rebel,,,,,,
 Healer,,,,,,
@@ -7,4 +7,4 @@ Sinner,,,,,,
 Champion,,,,,,
 Mother,,,,,,
 King,,,,,,
-Hound,Canis Verran,F,Hellhound,Changeling,,
+Hound,Canis Verran,F,Changeling,Hellhound,,
