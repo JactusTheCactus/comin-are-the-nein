@@ -32,7 +32,8 @@ sapphire:
 sinner:
   <<: *hero
   species:
-    primary: Tiefling
+    primary: Human
+    secondary: Tiefling
   details: |
     Sinner forged in the heat of a hellfire
     Sinner born in the flame
