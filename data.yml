@@ -52,4 +52,4 @@ hound:
   <<: *hero
   name: [Canis]
   sex: F
-  origin.species: Changeling ("Hell"hound)
+  origin.species: Changeling (Hellhound)
