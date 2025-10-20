@@ -18,10 +18,13 @@ function jsonToCsv(obj) {
 					key
 				].join(".")
 				: key
-			if (typeof obj[key] === 'object' && obj[key] !== null) {
-				flatten(obj[key], propName, res)
+			const val = obj[key]
+			if (Array.isArray(val)) {
+				res[propName] = val.join(" ")
+			} else if (val && typeof val === "object") {
+				flatten(val, propName, res)
 			} else {
-				res[propName] = obj[key]
+				res[propName] = val
 			}
 		}
 		return res
