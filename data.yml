@@ -3,7 +3,9 @@ _hero: &hero
     - !!str
     - !!str
   sex: !!str
-  species: !!str
+  species: !!seq
+    - !!str
+    - !!str
   nationality: !!str
   weapon: !!str
   details: !!seq []
