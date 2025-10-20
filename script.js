@@ -38,7 +38,7 @@ function jsonToCsv(obj) {
 			let out = item[h]
 			out = out.replace(/^\s*$/g,"")
 			out = out.replace(/"/g,"\"\"")
-			out = /[,"]|^$/.test(out)
+			out = /[,"]/.test(out)
 				? `"${out}"`
 				: out
 			return out ?? ''
