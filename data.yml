@@ -3,9 +3,8 @@ _hero: &hero
     - !!str
     - !!str
   sex: !!str
-  origin: !!map
-    species: !!str
-    nationality: !!str
+  species: !!str
+  nationality: !!str
   weapon: !!str
   details: !!seq []
 sailor:
@@ -54,4 +53,4 @@ hound:
     - Canis
     - Verran
   sex: F
-  origin.species: Changeling (Hellhound)
+  species: Changeling (Hellhound)
