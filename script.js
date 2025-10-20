@@ -36,6 +36,7 @@ function jsonToCsv(obj) {
 	const csv = [headers.join(',')]
 		.concat(items.map(item => headers.map(h => {
 			let out = item[h]
+			out = out.replace(/^\s*$/g,"")
 			out = out.replace(/"/g,"\"\"")
 			out = /[,"]|^$/.test(out)
 				? `"${out}"`
