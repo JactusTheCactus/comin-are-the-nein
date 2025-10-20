@@ -55,4 +55,6 @@ hound:
     - Canis
     - Verran
   sex: F
-  species: Changeling (Hellhound)
+  species:
+    - Changeling
+    - Hellhound
