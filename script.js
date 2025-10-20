@@ -33,7 +33,13 @@ function jsonToCsv(obj) {
 		key, ...flatten(val)
 	}))
 	const headers = Object.keys(items[0])
-	const csv = [headers.join(',')]
+	const csv = [
+		headers
+			.map(k => k
+				.replace(/^key$/,"moniker")
+			)
+			.join(',')
+	]
 		.concat(items.map(item => headers.map(h => {
 			let out = item[h]
 			out = out.replace(/^\s*$/g,"")
