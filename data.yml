@@ -11,7 +11,8 @@ _hero: &hero
   details: !!seq []
 sailor:
   <<: *hero
-  species.primary: Tiefling
+  species:
+    primary: Tiefling
   details: |
     Sailor born from a curse and a blessing
     Sailor born of the tides
