@@ -42,7 +42,7 @@ function jsonToCsv(obj) {
 				? `"${out}"`
 				: out
 			return out ?? ''
-		}).join(',').replace(/,+$/g,"")))
+		}).join(',')))
 		.join('\n')
 	return csv
 }
