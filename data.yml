@@ -15,6 +15,7 @@ sailor:
     Sailor born of the tides
 rebel:
   <<: *hero
+  sex: F
   details: |
     Rebel shunned by her daddy as a child
     Didn't know she was leaving for brighter skies
@@ -41,17 +42,20 @@ sinner:
     Sinner born in the flame
 champion:
   <<: *hero
+  sex: F
   weapon: Flail
   details: |
     Champion freed from the binding of her chains
     When the storm rolls in you'll know her name
 mother:
   <<: *hero
+  sex: F
   details: |
     Mother torn from her child by the river
     Mother born after death
 king:
   <<: *hero
+  sex: M
   details: |
     A king whose eyes never shut when he left
     Now returns as a menace to his friends bereft
