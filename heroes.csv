@@ -1,10 +1,10 @@
 moniker,name,sex,species[primary],species[secondary],weapon
 Sailor,,,,,
-Rebel,,,,,
+Rebel,,F,,,
 Healer,,,,,Necromancy
 Sapphire,,F,,,
 Sinner,,M,Human,Tiefling,
-Champion,,,,,Flail
-Mother,,,,,
-King,,,,,
+Champion,,F,,,Flail
+Mother,,F,,,
+King,,M,,,
 Hound,Canis Verran,F,Changeling,Hellhound,Unarmed
