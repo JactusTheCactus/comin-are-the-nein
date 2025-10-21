@@ -27,6 +27,7 @@ healer:
     Healer born in the grove
 sapphire:
   <<: *hero
+  sex: F
   details: |
     Sapphire left her mama back at home
     Going out to discover what adventure holds
