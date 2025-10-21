@@ -10,7 +10,6 @@ function capitalize(str, strict = false) {
 	].join("")
 }
 function jsonToCsv(obj) {
-	const colBreak = ","
 	function flatten(obj, parentKey = '', res = {}) {
 		for (let key in obj) {
 			const propName = parentKey
@@ -31,12 +30,13 @@ function jsonToCsv(obj) {
 		key, ...flatten(val)
 	}))
 	const headers = Object.keys(items[0])
+	const colBreak = ","
 	const csv = [
 		headers
-			.map(k => k
-				.replace(/^key$/,"moniker")
-			)
-			.join(colBreak)
+			.map(k => k.replace(
+				/^key$/,
+				"moniker"
+			)).join(colBreak)
 	]
 		.concat(items.map(item => headers.map(h => {
 			let out = item[h] ?? ""
