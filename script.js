@@ -36,7 +36,7 @@ function jsonToCsv(obj) {
 			.map(k => k.replace(
 				/^key$/,
 				"moniker"
-			)).join(delimitet)
+			)).join(delimiter)
 	]
 		.concat(items.map(item => headers.map(h => {
 			let out = item[h] ?? ""
