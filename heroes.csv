@@ -1,10 +1,10 @@
-moniker,name,sex,species[primary],species[secondary],nationality,weapon
-Sailor,,,,,,
-Rebel,,,,,,
-Healer,,,,,,Necromancy
-Sapphire,,,,,,
-Sinner,,M,Human,Tiefling,,
-Champion,,,,,,
-Mother,,,,,,
-King,,,,,,
-Hound,Canis Verran,F,Changeling,Hellhound,,Unarmed
+moniker,name,sex,species[primary],species[secondary],weapon
+Sailor,,,,,
+Rebel,,,,,
+Healer,,,,,Necromancy
+Sapphire,,F,,,
+Sinner,,M,Human,Tiefling,
+Champion,,,,,Flail
+Mother,,,,,
+King,,,,,
+Hound,Canis Verran,F,Changeling,Hellhound,Unarmed
