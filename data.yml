@@ -6,7 +6,6 @@ _hero: &hero
   species: !!map
     primary: !!str
     secondary: !!str
-  nationality: !!str
   weapon: !!str
   details: !!seq []
 sailor:
