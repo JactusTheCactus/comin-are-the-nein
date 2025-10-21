@@ -1,7 +1,7 @@
 moniker,name,sex,species[primary],species[secondary],weapon
-Sailor,,,,,
+Sailor,,M,,,
 Rebel,,F,,,
-Healer,,,,,Necromancy
+Healer,,M,,,Necromancy
 Sapphire,,F,,,
 Sinner,,M,Human,Tiefling,
 Champion,,F,,,Flail
