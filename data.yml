@@ -41,6 +41,7 @@ sinner:
     Sinner born in the flame
 champion:
   <<: *hero
+  weapon: Flail
   details: |
     Champion freed from the binding of her chains
     When the storm rolls in you'll know her name
