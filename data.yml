@@ -10,6 +10,7 @@ _hero: &hero
   details: !!seq []
 sailor:
   <<: *hero
+  sex: M
   details: |
     Sailor born from a curse and a blessing
     Sailor born of the tides
@@ -21,6 +22,7 @@ rebel:
     Didn't know she was leaving for brighter skies
 healer:
   <<: *hero
+  sex: M
   weapon: Necromancy
   details: |
     Healer raised in the heart of a graveyard
