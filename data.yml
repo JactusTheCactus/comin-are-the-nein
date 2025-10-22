@@ -1,10 +1,10 @@
 _:
   - &hero
-    name: []
-    sex: ""
-    species: []
-    extra: []
-    details: ""
+    name: !!seq []
+    sex: !!str
+    species: !!seq []
+    extra: !!seq []
+    details: !!str
 sailor:
   <<: *hero
   sex: M
