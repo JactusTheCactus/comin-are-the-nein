@@ -1,11 +1,9 @@
 Commands
 ========
 
-<h2>
 ```sh
 npm run [w | watch]
 ```
-</h2>
 -------------------
 watches changes to `data.yml` and rebuilds `heroes.csv`
 
