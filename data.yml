@@ -8,6 +8,8 @@ _:
 sailor:
   <<: *hero
   sex: M
+  species:
+    - Strigoi
   details: |
     Sailor born from a curse and a blessing
     Sailor born of the tides
