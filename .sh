@@ -5,4 +5,7 @@ flag() {
 		[[ -e ".flags/$f" ]] || return 1
 	done
 }
-./script.js
+npm run s
+if flag local; then
+	npm run w
+fi

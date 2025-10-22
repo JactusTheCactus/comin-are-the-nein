@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import fs from "fs"
-import YAML from "js-yaml"
+import { fs, YAML } from "./packages.js"
 function capitalize(str, strict = false) {
 	return [
 		str[0].toUpperCase(),
@@ -17,7 +16,12 @@ function jsonToCsv(obj) {
 				: key
 			const val = obj[key]
 			if (Array.isArray(val)) {
-				res[propName] = val.join(" ")
+				const arrJoin = {
+					extra: ", ",
+					name: " ",
+					species: " | "
+				}[key] ?? "_"
+				res[propName] = val.join(arrJoin)
 			} else if (val && typeof val === "object") {
 				flatten(val, propName, res)
 			} else {
@@ -40,8 +44,8 @@ function jsonToCsv(obj) {
 	]
 		.concat(items.map(item => headers.map(h => {
 			let out = item[h] ?? ""
-			out = out.replace(/^\s*$/g,"")
-			out = out.replace(/"/g,q=>q.repeat(2))
+			out = out.replace(/^\s*$/g, "")
+			out = out.replace(/"/g, q => q.repeat(2))
 			out = /[,"]/.test(out)
 				? `"${out}"`
 				: out
@@ -53,10 +57,12 @@ function jsonToCsv(obj) {
 function clean(obj) {
 	if (typeof obj === "object" && obj !== null && !Array.isArray(obj)) {
 		Object.keys(obj).forEach(k => {
-			if (/^_+/.test(k)) {
+			if (/^_+|_+$/.test(k)) {
 				delete obj[k]
 			} else {
-				clean(obj[k])
+				if (Array.isArray(obj[k])) {
+					clean(obj[k])
+				}
 			}
 		})
 	}

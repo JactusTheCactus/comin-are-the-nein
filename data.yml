@@ -1,13 +1,10 @@
-_hero: &hero
-  name: !!seq
-    - !!str
-    - !!str
-  sex: !!str
-  species: !!map
-    primary: !!str
-    secondary: !!str
-  weapon: !!str
-  details: !!seq []
+_:
+  - &hero
+    name: []
+    sex: ""
+    species: []
+    extra: []
+    details: ""
 sailor:
   <<: *hero
   sex: M
@@ -23,7 +20,7 @@ rebel:
 healer:
   <<: *hero
   sex: M
-  weapon: Necromancy
+  extra: [Necromancy]
   details: |
     Healer raised in the heart of a graveyard
     Healer born in the grove
@@ -36,16 +33,14 @@ sapphire:
 sinner:
   <<: *hero
   sex: M
-  species:
-    primary: Human
-    secondary: Tiefling
+  species: [Human, Tiefling]
   details: |
     Sinner forged in the heat of a hellfire
     Sinner born in the flame
 champion:
   <<: *hero
   sex: F
-  weapon: Flail
+  extra: [Flail]
   details: |
     Champion freed from the binding of her chains
     When the storm rolls in you'll know her name
@@ -63,10 +58,6 @@ king:
     Now returns as a menace to his friends bereft
 hound:
   <<: *hero
-  name:
-    - Canis
-    - Verran
+  name: [Canis, Verran]
   sex: F
-  species:
-    primary: Changeling
-    secondary: Hellhound
+  species: [Changeling, Hellhound]
