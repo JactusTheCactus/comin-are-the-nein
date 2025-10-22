@@ -20,7 +20,8 @@ rebel:
 healer:
   <<: *hero
   sex: M
-  extra: [Necromancy]
+  extra:
+    - Necromancy
   details: |
     Healer raised in the heart of a graveyard
     Healer born in the grove
@@ -33,14 +34,17 @@ sapphire:
 sinner:
   <<: *hero
   sex: M
-  species: [Human, Tiefling]
+  species:
+    - Human
+    - Tiefling
   details: |
     Sinner forged in the heat of a hellfire
     Sinner born in the flame
 champion:
   <<: *hero
   sex: F
-  extra: [Flail]
+  extra:
+    - Flail
   details: |
     Champion freed from the binding of her chains
     When the storm rolls in you'll know her name
@@ -58,6 +62,10 @@ king:
     Now returns as a menace to his friends bereft
 hound:
   <<: *hero
-  name: [Canis, Verran]
+  name:
+    - Canis
+    - Verran
   sex: F
-  species: [Changeling, Hellhound]
+  species:
+    - Changeling
+    - Hellhound
