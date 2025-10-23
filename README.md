@@ -8,10 +8,9 @@ Builds `heroes.csv` from `data.yml`
 ```sh
 npm run s[ync]
 ```
-syncs up the `scripts` key in `package.json` with `scripts.yml`
+Syncs up the `scripts` in `package.json` with `scripts.yml`
 ## Watch
 ```sh
 npm run w[atch]
 ```
-watches changes to `data.yml` and rebuilds `heroes.csv`
-- like [Build](#build), but constantly rebuilds
+Watches changes to `data.yml` and rebuilds `heroes.csv`. (Like [Build](#build), but constantly rebuilds with changes)
