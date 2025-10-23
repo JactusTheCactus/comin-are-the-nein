@@ -5,12 +5,12 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"s": "SYNC\n./scripts.js\n",
-		"w": "WATCH\ninotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
-		"watch": "WATCH\ninotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
-		"sync": "SYNC\n./scripts.js\n",
-		"build": "BUILD\n./.sh\n",
-		"b": "BUILD\n./.sh\n"
+		"s": "./scripts.js\n",
+		"w": "inotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
+		"watch": "inotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
+		"sync": "./scripts.js\n",
+		"build": "./.sh\n",
+		"b": "./.sh\n"
 	},
 	"keywords": [],
 	"author": "",
