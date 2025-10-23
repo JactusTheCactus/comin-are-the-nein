@@ -6,9 +6,11 @@
 	"type": "module",
 	"scripts": {
 		"s": "./scripts.js\n",
-		"w": "inotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh;\ndone\n",
-		"watch": "inotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh;\ndone\n",
-		"sync": "./scripts.js\n"
+		"w": "inotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
+		"watch": "inotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
+		"sync": "./scripts.js\n",
+		"build": "./.sh\n",
+		"b": "./.sh\n"
 	},
 	"keywords": [],
 	"author": "",
