@@ -1,9 +1,14 @@
 {
-	"name": "comin-are-the-nein",
-	"version": "1.0.0",
+	"author": "",
+	"dependencies": {
+		"js-yaml": "^4.1.0",
+		"tomlify-j0.4": "^3.0.0"
+	},
 	"description": "",
+	"keywords": [],
+	"license": "ISC",
 	"main": "index.js",
-	"type": "module",
+	"name": "comin-are-the-nein",
 	"scripts": {
 		"s": "echo \"SYNC\"\n./scripts.js",
 		"w": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
@@ -12,11 +17,6 @@
 		"build": "echo \"BUILD\"\n./.sh",
 		"b": "echo \"BUILD\"\n./.sh"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"js-yaml": "^4.1.0",
-		"tomlify-j0.4": "^3.0.0"
-	}
+	"type": "module",
+	"version": "1.0.0"
 }
