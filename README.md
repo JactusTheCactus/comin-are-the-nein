@@ -14,4 +14,4 @@ syncs up the `scripts` key in `package.json` with `scripts.yml`
 npm run w[atch]
 ```
 watches changes to `data.yml` and rebuilds `heroes.csv`
-- like [Build](#build), but condtantly rebuilds
+- like [Build](#build), but constantly rebuilds
