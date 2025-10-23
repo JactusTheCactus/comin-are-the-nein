@@ -43,12 +43,14 @@ function jsonToCsv(obj) {
 			)).join(delimiter)
 	]
 		.concat(items.map(item => headers.map(h => {
-			const out = String(item[h] ?? "")
+			return String(item[h] ?? "")
 				.trim()
 				.replace(/"/g, `""`)
-			return out.match(/[,"]/)
-				? `"${out}"`
-				: out
+				.replace(/^[\S\s]+$/,m => /[,"]/
+					.test(m)
+						? `"${m}"`
+						: m
+				)
 		}).join(delimiter)))
 		.join('\n')
 	return csv
