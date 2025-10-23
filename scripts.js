@@ -6,8 +6,8 @@ pack.scripts = {}
 Object.keys(scripts)
 	.forEach(k => {
 		[
-			pack.scripts[k],
-			pack.scripts[k[0]]
+			pack.scripts[k[0]],
+			pack.scripts[k]
 		] = Array.from({
 			length: 2
 		}, () => [
