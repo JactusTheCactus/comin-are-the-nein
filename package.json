@@ -12,9 +12,6 @@
 	"scripts": {
 		"s": "echo \"SYNC\"\n./scripts.js",
 		"w": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
-		"watch": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
-		"sync": "echo \"SYNC\"\n./scripts.js",
-		"build": "echo \"BUILD\"\n./.sh",
 		"b": "echo \"BUILD\"\n./.sh"
 	},
 	"type": "module",
