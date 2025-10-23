@@ -15,6 +15,15 @@ Object.keys(scripts)
 		].join("\n"))
 	})
 fs.writeFileSync("package.json",
-	JSON.stringify(pack, null, "\t")
+	JSON.stringify(
+		Object.keys(pack)
+			.sort()
+			.reduce((acc,key) => {
+				acc[key] = pack[key]
+				return acc
+			},{}),
+		null,
+		"\t"
+	)
 		.replace(/ {2}/g, "\\t")
 )
