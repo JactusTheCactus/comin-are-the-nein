@@ -23,8 +23,6 @@ fs.writeFileSync("package.json",
 				acc[key] = pack[key]
 				return acc
 			},{}),
-		null,
-		"\t"
-	)
+	null,"\t")
 		.replace(/ {2}/g, "\\t")
 )
