@@ -13,4 +13,4 @@ Syncs up the `scripts` in `package.json` with `scripts.yml`
 ```npm
 npm run w[atch]
 ```
-Watches changes to `data.yml` and rebuilds `heroes.csv`. (Like [Build](#build), but continuous)
+Watches changes to `data.yml` and rebuilds `heroes.csv`. (Like [`npm run build`](#build), but continuous)
