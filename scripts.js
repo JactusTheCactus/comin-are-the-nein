@@ -2,6 +2,7 @@
 import { fs, YAML } from "./packages.js"
 const pack = JSON.parse(fs.readFileSync("./package.json"))
 const scripts = YAML.load(fs.readFileSync("./scripts.yml"))
+pack.scripts = {}
 Object.keys(scripts)
 	.forEach(k => {
 		[
