@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run script
-        run: ./scripts.js # npm run b
+        run: npm run b
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
