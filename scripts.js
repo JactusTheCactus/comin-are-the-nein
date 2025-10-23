@@ -7,7 +7,12 @@ Object.keys(scripts)
 		[
 			pack.scripts[k],
 			pack.scripts[k[0]]
-		] = Array.from({ length: 2 }, () => scripts[k])
+		] = Array.from({
+			length: 2
+		}, () => [
+			k.toUpperCase(),
+			scripts[k]
+		].join("\n"))
 	})
 fs.writeFileSync("package.json",
 	JSON.stringify(pack, null, "\t")
