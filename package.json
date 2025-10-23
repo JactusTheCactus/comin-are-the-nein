@@ -9,7 +9,14 @@
 	"license": "ISC",
 	"main": "index.js",
 	"name": "comin-are-the-nein",
-	"scripts": {},
+	"scripts": {
+		"build": "echo \"BUILD\"\n./.sh",
+		"b": "echo \"BUILD\"\n./.sh",
+		"sync": "echo \"SYNC\"\n./scripts.js",
+		"s": "echo \"SYNC\"\n./scripts.js",
+		"watch": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n",
+		"w": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.sh\ndone\n"
+	},
 	"type": "module",
 	"version": "1.0.0"
 }
