@@ -10,7 +10,7 @@ Object.keys(scripts)
 		] = Array.from({
 			length: 2
 		}, () => [
-			k.toUpperCase(),
+			`echo "${k.toUpperCase()}"`,
 			scripts[k]
 		].join("\n"))
 	})
