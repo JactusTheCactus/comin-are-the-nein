@@ -8,7 +8,7 @@ Object.keys(scripts)
 		pack.scripts[k] = [
 			`echo "${k.toUpperCase()}"`,
 			scripts[k]
-		].join("\n"))
+		].join("\n")
 	})
 fs.writeFileSync("package.json",
 	JSON.stringify(
