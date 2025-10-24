@@ -5,9 +5,9 @@ flag() {
 		[[ -e ".flags/$f" ]] || return 1
 	done
 }
-npm run s
+npm run sync
 if flag local; then
-	npm run w
+	npm run watch
 else
-	npm run b
+	npm run build
 fi
