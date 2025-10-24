@@ -8,4 +8,6 @@ flag() {
 npm run s
 if flag local; then
 	npm run w
+else
+	npm run b
 fi
