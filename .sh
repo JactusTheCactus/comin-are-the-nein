@@ -5,6 +5,7 @@ flag() {
 		[[ -e ".flags/$f" ]] || return 1
 	done
 }
+npm remove tomlify-j0.4
 npm run s
 if flag local; then
 	npm run w
