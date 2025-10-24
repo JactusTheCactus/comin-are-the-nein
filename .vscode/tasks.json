@@ -12,7 +12,7 @@
 		{
 			"label": "Build",
 			"type": "shell",
-			"command": "npm run b",
+			"command": "./.sh",
 			"group": {
 				"kind": "build",
 				"isDefault": true
