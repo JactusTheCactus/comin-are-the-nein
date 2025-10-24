@@ -5,12 +5,7 @@ const scripts = YAML.load(fs.readFileSync("./scripts.yml"))
 pack.scripts = {}
 Object.keys(scripts)
 	.forEach(k => {
-		[
-			pack.scripts[k[0]],
-			pack.scripts[k]
-		] = Array.from({
-			length: 2
-		}, () => [
+		pack.scripts[k] = [
 			`echo "${k.toUpperCase()}"`,
 			scripts[k]
 		].join("\n"))
