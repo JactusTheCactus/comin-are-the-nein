@@ -11,7 +11,7 @@
 	"scripts": {
 		"build": "echo \"BUILD\"\n./.js",
 		"sync": "echo \"SYNC\"\n./scripts.js",
-		"watch": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\t./.js\ndone\n"
+		"watch": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data.yml | while read -r event; do\n\tnpm run build\ndone\n"
 	},
 	"type": "module",
 	"version": "1.0.0"
