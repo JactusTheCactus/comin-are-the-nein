@@ -68,7 +68,7 @@ function clean(obj) {
 	}
 	return obj
 }
-const heroes = clean(YAML.load(fs.readFileSync("data.yml")))
+const heroes = clean(YAML.load(fs.readFileSync("data/.yml")))
 Object.keys(heroes).forEach(h => {
 	const hero = heroes[h]
 	delete hero.details
@@ -76,4 +76,4 @@ Object.keys(heroes).forEach(h => {
 	delete heroes[h]
 })
 const csv = jsonToCsv(heroes)
-fs.writeFileSync("heroes.csv", csv)
+fs.writeFileSync("data/.csv", csv)
