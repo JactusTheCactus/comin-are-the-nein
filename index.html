@@ -68,13 +68,13 @@
 					content.push(tag("dt",
 						tag("h2", char.name
 							? char.name
-							: tag("h3",
-								tag("q",`The ${char.moniker}`)
-							)
+							: tag("q",`The ${char.moniker}`)
 						)
 					))
 					content.push(tag("dd", char.name
-						? tag("q", `The ${char.moniker}`)
+						? tag("h3",
+							tag("q", `The ${char.moniker}`)
+						)
 						: ""
 					));
 					[
