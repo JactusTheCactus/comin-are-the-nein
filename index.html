@@ -67,11 +67,12 @@
 					const content = []
 					content.push(tag("dt", tag("b", char.name
 						? char.name
-						: `The ${char.moniker}`)
-					))
-					content.push(char.name ? tag("dd",
-						tag("q", `The ${char.moniker}`)
-					) : null);
+						: tag("q", `The ${char.moniker}`)
+					)))
+					content.push(tag("dd", char.name
+						? tag("q", `The ${char.moniker}`)
+						: ""
+					));
 					[
 						"sex",
 						"species",
