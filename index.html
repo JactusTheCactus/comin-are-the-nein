@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Character Viewer</title>
+	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+	<style>
+		body {
+			font: 20px "Noto Sans";
+			padding: 20px;
+			background: #f8f8f8;
+		}
+
+		select {
+			font-size: 1em;
+			margin-bottom: 20px;
+			padding: 5px 10px;
+		}
+
+		.character-details {
+			background: #fff;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		}
+	</style>
+</head>
+
+<body>
+	<h1></h1>
+	<label for="characterSelect">Choose a character:</label>
+	<select id="characterSelect"></select>
+	<div class="character-details" id="characterDetails">
+		<p>Select a hero to view details.</p>
+	</div>
+	<script>
+		[
+			document.title,
+			document.querySelector("h1").innerText
+		] = Array(2).fill("Comin' Are the Nein")
+		const tab = "&nbsp;".repeat(4)
+		function tag(el, text) {
+			return [
+				`<${el}>`,
+				text,
+				`</${el}>`
+			].join("")
+		}
+		async function loadCharacters() {
+			const response = await fetch('./data/.csv');
+			const csvText = await response.text();
+			const data = Papa.parse(csvText, {
+				header: true
+			}).data;
+			const select = document.getElementById('characterSelect');
+			const details = document.getElementById('characterDetails');
+			data.forEach(character => {
+				const option = document.createElement('option');
+				option.value = character.moniker
+				option.textContent = `The ${character.moniker}`
+				select.appendChild(option);
+			});
+			select.addEventListener('change', () => {
+				const char = data.find(c => c.moniker === select.value);
+				if (char) {
+					const content = []
+					content.push(tag("dt", tag("b", char.name
+						? char.name
+						: `The ${char.moniker}`)
+					))
+					content.push(char.name ? tag("dd",
+						tag("q", `The ${char.moniker}`)
+					) : null);
+					[
+						"sex",
+						"species",
+						"extra"
+					].forEach(d => {
+						content.push(char[d] ? [
+							tag("dt", tag("b",
+								d[0].toUpperCase()
+								+ d.slice(1).toLowerCase()
+								+ ":"
+							)),
+							tag("dd", char[d])
+						].join("") : null)
+					})
+					details.innerHTML = tag("dl",
+						content
+							.filter(Boolean)
+							.join("")
+					)
+				}
+			});
+		}
+		loadCharacters();
+	</script>
+</body>
+
+</html>
