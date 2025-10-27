@@ -71,11 +71,11 @@
 							: tag("q",`The ${char.moniker}`)
 						)
 					))
-					content.push(tag("dd", char.name
-						? tag("h3",
-							tag("q", `The ${char.moniker}`)
+					content.push(tag("dd",
+						tag("h3", char.name
+							? tag("q", `The ${char.moniker}`)
+							: ""
 						)
-						: ""
 					));
 					[
 						"sex",
