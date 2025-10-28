@@ -22,11 +22,9 @@
 		] = Array(2).fill("Comin' Are the Nein")
 		const tab = "&nbsp;".repeat(4)
 		function tag(el, text) {
-			return [
-				`<${el}>`,
-				text,
-				`</${el}>`
-			].join("")
+			return `<${el}>`
+				+ text
+				+ `</${el}>`
 		}
 		async function loadCharacters() {
 			const response = await fetch('./data/.csv');
