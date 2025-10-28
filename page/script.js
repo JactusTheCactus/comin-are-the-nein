@@ -16,6 +16,7 @@ async function loadCharacters() {
 			header: true
 		}).data
 	];
+	console.log(data)
 	const select = document.getElementById('characterSelect');
 	const details = document.getElementById('characterDetails');
 	data.forEach(character => {
