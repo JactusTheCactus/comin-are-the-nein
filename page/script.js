@@ -3,7 +3,6 @@
 	document.querySelector("h1").innerText
 ] = Array(2).fill("Comin' Are the Nein")
 const tab = " ".repeat(4)
-
 function tag(el, text) {
 	return `<${el}>` +
 		text +
