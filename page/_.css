@@ -1,0 +1,31 @@
+body {
+  font: 20pt "Inter";
+  padding: 1em;
+  background: #f8f8f8;
+}
+body code,
+body code select {
+  font: 1em "Fira Code";
+  margin-bottom: 1em;
+  padding: 0.25em 0.5em;
+}
+body .character-details {
+  background: #fff;
+  padding: 1em;
+  border-radius: 0.25em;
+  box-shadow: 0em 0em 0.25em rgba(0, 0, 0, 0.1);
+}
+body .character-details dl :nth-child(1) {
+  font-size: 1.5em;
+}
+body .character-details dl dt {
+  font-weight: bold;
+}
+body .character-details dl dt:nth-child(1) {
+  text-decoration: underline;
+}
+body .character-details dl q {
+  font-style: italic;
+}
+
+/*# sourceMappingURL=_.css.map */

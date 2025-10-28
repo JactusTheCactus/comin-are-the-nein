@@ -6,8 +6,10 @@ flag() {
 	done
 }
 npm run sync
+npm run page
 if flag local; then
 	npm run watch
 else
 	npm run build
 fi
+npm run post

@@ -6,3 +6,10 @@ watch: |
   inotifywait -m -e modify,create,delete data/.yml | while read -r event; do
     npm run build
   done
+page: |
+  sass page/.scss page/_.css
+  ./page/.js
+post: |
+  for ext in map; do
+    find . -type f -name "*.$ext" -delete
+  done
