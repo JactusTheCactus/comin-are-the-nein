@@ -26,16 +26,23 @@ async function loadCharacters() {
 		const char = data.find(c => c.moniker === select.value);
 		if (char) {
 			const content = []
-			content.push(tag("dt",
-				tag("h2", char.name ?
-					char.name :
-					tag("q", `The ${char.moniker}`)
+			content.push(
+				tag("dt",
+					tag("h2", char.name
+						? char.name
+						: tag("q",
+							`The ${char.moniker}`
+						)
+					)
 				)
-			))
-			content.push(tag("dd",
-				tag("h3", char.name ?
-					tag("q", `The ${char.moniker}`) :
-					""
+			)
+			content.push(
+				tag("dd",
+					tag("h3", char.name
+						? tag("q",
+							`The ${char.moniker}`
+						)
+						: ""
 				)
 			));
 			[
@@ -44,12 +51,16 @@ async function loadCharacters() {
 				"extra"
 			].forEach(d => {
 				content.push(char[d] ? [
-					tag("dt", tag("b",
-						d[0].toUpperCase() +
-						d.slice(1).toLowerCase() +
-						":"
-					)),
-					tag("dd", char[d])
+					tag("dt",
+						tag("b",
+							d[0].toUpperCase() +
+							d.slice(1).toLowerCase() +
+							":"
+						)
+					),
+					tag("dd",
+						char[d]
+					)
 				].join("") : null)
 			})
 			details.innerHTML = tag("dl",
