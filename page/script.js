@@ -10,9 +10,12 @@ function tag(el, text) {
 async function loadCharacters() {
 	const response = await fetch('./data/.csv');
 	const csvText = await response.text();
-	const data = Papa.parse(csvText, {
-		header: true
-	}).data;
+	const data = [
+		{}
+		...Papa.parse(csvText, {
+			header: true
+		}).data
+	];
 	const select = document.getElementById('characterSelect');
 	const details = document.getElementById('characterDetails');
 	data.forEach(character => {
