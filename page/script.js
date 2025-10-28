@@ -11,13 +11,7 @@ async function loadCharacters() {
 	const response = await fetch('./data/.csv');
 	const csvText = await response.text();
 	const data = [
-		{
-			moniker: "Null",
-			//name: "N/A",
-			sex: "N/A",
-			species: "N/A",
-			extra: "N/A"
-		},
+		{},
 		...Papa.parse(csvText, {
 			header: true
 		}).data
