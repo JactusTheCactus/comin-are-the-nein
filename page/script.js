@@ -31,7 +31,7 @@ async function loadCharacters() {
 						? char.name
 						: tag("i",
 							tag("q",
-							`The ${char.moniker}`
+								`The ${char.moniker}`
 							)
 						)
 					)
