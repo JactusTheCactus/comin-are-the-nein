@@ -12,8 +12,8 @@ async function loadCharacters() {
 	const csvText = await response.text();
 	const data = [
 		{
-			moniker: "N/A",
-			name: "N/A",
+			moniker: "Null",
+			//name: "N/A",
 			sex: "N/A",
 			species: "N/A",
 			extra: "N/A"
