@@ -21,7 +21,9 @@ async function loadCharacters() {
 	data.forEach(character => {
 		const option = document.createElement('option');
 		option.value = character.moniker
-		option.textContent = `The ${character.moniker}`
+		option.textContent = character.moniker
+			? `The ${character.moniker}`
+			: "--"
 		select.appendChild(option);
 	});
 	select.addEventListener('change', () => {
