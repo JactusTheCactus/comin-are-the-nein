@@ -17,7 +17,7 @@ async function loadCharacters() {
 			sex: "N/A",
 			species: "N/A",
 			extra: "N/A"
-		}
+		},
 		...Papa.parse(csvText, {
 			header: true
 		}).data
