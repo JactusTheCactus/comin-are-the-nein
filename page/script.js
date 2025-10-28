@@ -38,8 +38,10 @@ async function loadCharacters() {
 			content.push(
 				tag("dd",
 					tag("h3", char.name
-						? tag("q",
-							`The ${char.moniker}`
+						? tag("i",
+							tag("q",
+								`The ${char.moniker}`
+							)
 						)
 						: ""
 				)
