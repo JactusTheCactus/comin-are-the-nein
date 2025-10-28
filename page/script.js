@@ -29,8 +29,10 @@ async function loadCharacters() {
 				tag("dt",
 					tag("h2", char.name
 						? char.name
-						: tag("q",
+						: tag("i",
+							tag("q",
 							`The ${char.moniker}`
+							)
 						)
 					)
 				)
