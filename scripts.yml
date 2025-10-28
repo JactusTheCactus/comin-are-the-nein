@@ -1,5 +1,5 @@
 build: ./.js
-sync: ./scripts.js && cp page/.css page/style.css
+sync: ./scripts.js
 watch: |
   inotifywait -m -e modify,create,delete data/.yml | while read -r event; do
     npm run build
