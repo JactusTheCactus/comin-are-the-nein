@@ -9,8 +9,8 @@
 	"main": "index.js",
 	"name": "comin-are-the-nein",
 	"scripts": {
-		"build": "echo \"BUILD\"\n./.js\nmv page/.js page/script.js\n",
-		"sync": "echo \"SYNC\"\n./scripts.js",
+		"build": "echo \"BUILD\"\n./.js\n",
+		"sync": "echo \"SYNC\"\n./scripts.js\n",
 		"watch": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data/.yml | while read -r event; do\n\tnpm run build\ndone\n"
 	},
 	"type": "module",
