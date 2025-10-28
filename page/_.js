@@ -2,7 +2,19 @@
 	document.title,
 	document.querySelector("h1").innerText
 ] = Array(2).fill("Comin' Are the Nein")
-function tag(el, text) {
+function capitalize(text = "", strict = false) {
+	return text[0].toUpperCase()
+		+ (strict
+			? text.slice(1).toLowerCase()
+			: text.slice(1)
+		)
+}
+function tag(
+	el = ["div"],
+	text = "",
+	cl = [],
+	id = ""
+) {
 	if (Array.isArray(el) && el.length > 1) {
 		return tag(el.slice(1), tag(el[0], text))
 	} else if (
@@ -12,9 +24,18 @@ function tag(el, text) {
 		if (Array.isArray(el)) {
 			el = el[0]
 		}
-		return `<${el}>`
-			+ text
-			+ `</${el}>`
+		return [
+			"<" + el,
+			id ?
+				" id=\"" + id + "\""
+				: "",
+			cl.length
+				? " class=\"" + cl.join(" ") + "\""
+				: "",
+			">",
+			text,
+			"</" + el + ">"
+		].join("")
 	}
 }
 async function loadCharacters() {
@@ -29,7 +50,6 @@ async function loadCharacters() {
 			}
 		).data
 	];
-	console.log(data)
 	const select = document.getElementById('characterSelect');
 	const details = document.getElementById('characterDetails');
 	data.forEach(character => {
@@ -41,30 +61,35 @@ async function loadCharacters() {
 		select.appendChild(option);
 	})
 	select.addEventListener('change', () => {
-		const char = data.find(c => (c.moniker ?? "_") === select.value);
+		const char = data.find(c =>
+			(c.moniker ?? "_")
+			=== select.value
+		);
 		if (char) {
 			const content = []
 			content.push(
-				char.moniker
-					? tag(["dt"],
-						char.name
-							? char.name
-							: tag(["q"],
-								`The ${char.moniker}`
-							)
-					)
-					: tag(["code"],
-						"Select a Hero to view details"
-					)
+				tag(["dt"],
+					(char.name
+						? char.name
+						: tag(["q"],
+							`The ${char.moniker}`
+						)
+					),
+					[],
+					"primary"
+				)
 			)
 			if (char.moniker) {
 				content.push(
 					tag(["dd"],
-						char.name
+						(char.name
 							? tag(["q"],
 								`The ${char.moniker}`
 							)
 							: ""
+						),
+						[],
+						"secondary"
 					)
 				)
 			}
@@ -75,12 +100,25 @@ async function loadCharacters() {
 			].forEach(d => {
 				content.push(char[d] ? [
 					tag(["dt"],
-						d[0].toUpperCase() +
-						d.slice(1).toLowerCase() +
-						":"
+						capitalize(d, true) + ":",
+						["head"],
+						d
 					),
 					tag(["dd"],
-						char[d]
+						{
+							sex: {
+								F: "Female",
+								M: "Male"
+							}[char[d]] ?? "Neutral",
+							species: char[d]
+								.split(/ \| /)
+								.join("<br>"),
+							extra: char[d]
+								.split(/, /)
+								.join("<br>")
+						}[d] ?? char[d],
+						["value"],
+						d
 					)
 				].join("") : null)
 			})
@@ -89,6 +127,11 @@ async function loadCharacters() {
 					.filter(Boolean)
 					.join("")
 			)
+			if (!char.moniker) {
+				details.innerHTML = tag(["code"],
+					"Select a Hero to view details."
+				)
+			}
 		}
 	})
 	select.dispatchEvent(new Event("change"))

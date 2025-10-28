@@ -4,28 +4,37 @@ body {
   background: #f8f8f8;
 }
 body code,
-body code select {
+body select {
   font: 1em "Fira Code";
-  margin-bottom: 1em;
-  padding: 0.25em 0.5em;
+  margin: 0.25em;
+  padding: 0.25em 0.25em;
 }
 body .character-details {
   background: #fff;
   padding: 1em;
   border-radius: 0.25em;
-  box-shadow: 0em 0em 0.25em rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1);
 }
-body .character-details dl :nth-child(1) {
-  font-size: 1.5em;
+body .character-details dl {
+  margin: 0;
 }
-body .character-details dl dt {
+body .character-details dl #primary,
+body .character-details dl #secondary,
+body .character-details dl .head {
   font-weight: bold;
-}
-body .character-details dl dt:nth-child(1) {
-  text-decoration: underline;
 }
 body .character-details dl q {
   font-style: italic;
+}
+body .character-details dl #primary {
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+body .character-details dl #secondary {
+  font: 1em "Fira Code";
+}
+body .character-details dl #secondary q::before, body .character-details dl #secondary q::after {
+  content: '"';
 }
 
 /*# sourceMappingURL=_.css.map */
