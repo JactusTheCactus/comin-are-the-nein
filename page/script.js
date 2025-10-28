@@ -3,9 +3,9 @@
 	document.querySelector("h1").innerText
 ] = Array(2).fill("Comin' Are the Nein")
 function tag(el, text) {
-	return `<${el}>` +
-		text +
-		`</${el}>`
+	return `<${el}>`
+		+ text
+		+ `</${el}>`
 }
 async function loadCharacters() {
 	const response = await fetch('./data/.csv');
