@@ -11,8 +11,8 @@
 	"main": "index.js",
 	"name": "comin-are-the-nein",
 	"scripts": {
-		"build": "echo \"BUILD\"\n./.js\n",
-		"sync": "echo \"SYNC\"\n./scripts.js\n",
+		"build": "echo \"BUILD\"\n./.js",
+		"sync": "echo \"SYNC\"\n./scripts.js",
 		"watch": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data/.yml | while read -r event\n\tdo npm run build\ndone\n",
 		"page": "echo \"PAGE\"\nsass page/.scss page/_.css\n./page/.js\n",
 		"post": "echo \"POST\"\nfor ext in map\n\tdo find . -name \"*.$ext\" -delete\ndone\n"
