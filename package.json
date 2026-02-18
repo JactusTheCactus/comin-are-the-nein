@@ -13,9 +13,9 @@
 	"scripts": {
 		"build": "echo \"BUILD\"\n./.js\n",
 		"sync": "echo \"SYNC\"\n./scripts.js\n",
-		"watch": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data/.yml | while read -r event; do\n\tnpm run build\ndone\n",
+		"watch": "echo \"WATCH\"\ninotifywait -m -e modify,create,delete data/.yml | while read -r event\n\tdo npm run build\ndone\n",
 		"page": "echo \"PAGE\"\nsass page/.scss page/_.css\n./page/.js\n",
-		"post": "echo \"POST\"\nfor ext in map; do\n\tfind . -type f -name \"*.$ext\" -delete\ndone\n"
+		"post": "echo \"POST\"\nfor ext in map\n\tdo find . -name \"*.$ext\" -delete\ndone\n"
 	},
 	"type": "module",
 	"version": "1.0.0"
